@@ -1,7 +1,7 @@
-import testReducer from './testRecducer'
+import testReducer from "./testRecducer";
 
 const reducers = {
-    counter: testReducer
-}
+  transactionsReducer: testReducer,
+};
 
-export default reducers
+export default reducers;

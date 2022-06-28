@@ -2,6 +2,7 @@ import React from "react";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import AppBar from "@mui/material/AppBar";
+import { FaFileInvoice } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -11,9 +12,10 @@ const Header = () => {
         sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       >
         <Toolbar>
-          <Typography variant="h6" noWrap component="div">
-            Clipped drawer
-          </Typography>
+          <span className={"text-2xl mr-2"}>
+            <FaFileInvoice />
+          </span>
+          <span className={"text-2xl"}>Invoice Generator</span>
         </Toolbar>
       </AppBar>
     </div>

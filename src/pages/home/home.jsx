@@ -1,6 +1,7 @@
 import React from "react";
 import KPIs from "../../components/kpis";
 import TransactionList from "../../components/transctionsList";
+import { useSelector } from "react-redux";
 const Home = () => {
   return (
     <div className="home">
