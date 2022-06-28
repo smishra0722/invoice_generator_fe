@@ -5,15 +5,15 @@ import AllTransactions from "./pages/allTransactions";
 
 const routes = [
   {
+    path: "/form/:id",
+    element: <Form />,
+  },
+  {
     exact: true,
     path: "/",
     element: <Home />,
   },
-  {
-    exact: true,
-    path: "/form",
-    element: <Form />,
-  },
+
   {
     exact: true,
     path: "/allTransactions",

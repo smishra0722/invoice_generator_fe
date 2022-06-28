@@ -11,6 +11,7 @@ import {
   getTransactionById,
 } from "../redux/testRecducer";
 import { useNavigate } from "react-router-dom";
+import { current } from "@reduxjs/toolkit";
 
 const TransactionsList = () => {
   const history = useNavigate();
@@ -42,6 +43,22 @@ const TransactionsList = () => {
       return (acc = acc + ",....");
     }, "");
   };
+
+  const handleEditTransactions = (id) => {
+    dispatch(getTransactionById(id));
+    history("/form/" + id);
+  };
+
+  // const temp = transactionData;
+  // temp.sort((curr, next) => {
+  //   console.log("CHECKINNTT", curr, next);
+  //   const currDate = new Date(curr.createdAt);
+  //   const nextDate = new Date(next.createdAt);
+  //   console.log("CHECKINNTT", currDate - nextDate);
+  //   return currDate - nextDate;
+  // });
+
+  // console.log("SORTEDTRANSACTIONS", temp);
   return (
     <div className={"transaction-list"}>
       {transactionData.map((data) => {
@@ -87,7 +104,10 @@ const TransactionsList = () => {
                   >
                     Show Details
                   </button>
-                  <button className={"action-button regular mr-1"}>
+                  <button
+                    className={"action-button regular mr-1"}
+                    onClick={() => handleEditTransactions(data.id)}
+                  >
                     Edit Transaction
                   </button>
                   <button className={"action-button primary"}>

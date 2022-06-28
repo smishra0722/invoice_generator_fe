@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import moment from "moment";
+import { FormattedNumber } from "react-intl";
 
 const ShowDetails = () => {
   const params = useParams();
@@ -10,7 +11,7 @@ const ShowDetails = () => {
     (state) => state.transactionsReducer.singleTransaction
   );
   const totalAmount = data[0]?.products.reduce(
-    (acc, product) => acc + product.amount,
+    (acc, product) => acc + Number(product.amount) * Number(product.quantity),
     0
   );
   console.log("DATA", data);
@@ -31,7 +32,8 @@ const ShowDetails = () => {
                 <td>
                   Invoice #: {data[0].id}
                   <br />
-                  Created: {moment(data[0].createdAt).toString()}
+                  Created:{" "}
+                  {moment(data[0].createdAt).format("YYYY-MM-DD").toString()}
                   <br />
                 </td>
               </tr>
@@ -89,7 +91,14 @@ const ShowDetails = () => {
               <td>{product.name}</td>
 
               <td>
-                {product.amount} x{product.quantity}
+                {
+                  <FormattedNumber
+                    value={product.amount}
+                    style={"currency"}
+                    currency={"INR"}
+                  />
+                }{" "}
+                x{product.quantity}
               </td>
             </tr>
           );
@@ -98,7 +107,16 @@ const ShowDetails = () => {
         <tr class="total">
           <td></td>
 
-          <td>Total: {totalAmount}</td>
+          <td>
+            Total:{" "}
+            {
+              <FormattedNumber
+                value={totalAmount}
+                style={"currency"}
+                currency={"INR"}
+              />
+            }
+          </td>
         </tr>
       </table>
     </div>
