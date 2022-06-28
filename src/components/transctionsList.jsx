@@ -24,8 +24,10 @@ const TransactionsList = () => {
     dispatch(deleteTransaction(id));
     // dispatch(getAllTransactions);
   };
-  const handleShowDetails = (id) => {
+  const handleShowDetails = (id, isGenerateInvoice) => {
     dispatch(getTransactionById(id));
+    if (isGenerateInvoice)
+      return history("/generateInvoice/" + id, { replace: true });
     history("/details/" + id, { replace: true });
   };
 
@@ -110,7 +112,10 @@ const TransactionsList = () => {
                   >
                     Edit Transaction
                   </button>
-                  <button className={"action-button primary"}>
+                  <button
+                    className={"action-button primary"}
+                    onClick={() => handleShowDetails(data.id, true)}
+                  >
                     Generate Invoice
                   </button>
                 </div>

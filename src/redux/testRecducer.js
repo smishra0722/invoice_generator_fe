@@ -67,6 +67,7 @@ const transactions = createSlice({
             ...action.payload,
           };
         }
+        state.singleTransaction = {};
         return transaction;
       });
     },
@@ -81,6 +82,9 @@ const transactions = createSlice({
         return transaction.id === action.payload;
       });
     },
+    clearSingleTransaction: (state, action) => {
+      state.singleTransaction = {};
+    },
   },
 });
 
@@ -90,6 +94,7 @@ export const {
   getTransactionById,
   getAllTransactions,
   addTransaction,
+  clearSingleTransaction,
 } = transactions.actions;
 
 export default transactions.reducer;

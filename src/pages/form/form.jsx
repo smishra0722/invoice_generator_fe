@@ -7,6 +7,7 @@ import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addTransaction,
+  clearSingleTransaction,
   getTransactionById,
   updateTransaction,
 } from "../../redux/testRecducer";
@@ -97,12 +98,43 @@ const Form = () => {
 
   const handleSubmit = () => {
     if (id && id != 0) {
+      dispatch(clearSingleTransaction());
       dispatch(updateTransaction(formData));
     } else {
+      dispatch(clearSingleTransaction());
       dispatch(addTransaction(formData));
     }
     navigate("/");
   };
+
+  const handleClear = () => {
+    setFormData({
+      id: Math.floor(100000 + Math.random() * 900000),
+      createdAt: moment().format("YYYY-MM-DD").toString(),
+      seller: {
+        sellerName: "",
+        sellerAddress1: "",
+        sellerAddress2: "",
+        sellerEmail: "",
+      },
+      buyer: {
+        buyerName: "",
+        buyerAddress1: "",
+        buyerAddress2: "",
+        buyerEmail: "",
+      },
+      products: [],
+      delivery: {
+        note: "",
+      },
+    });
+  };
+
+  React.useEffect(() => {
+    if (id && id == 0) {
+      dispatch(clearSingleTransaction());
+    }
+  }, [dispatch]);
 
   React.useEffect(() => {
     if (transactionData.length > 0) {
@@ -127,7 +159,12 @@ const Form = () => {
       </div>
       <div className={"mt-4"}>
         <div className={"flex flex-col border-b pb-3"}>
-          <div className={"mb-3"}>Basic Details</div>
+          <div className={"mb-3 flex justify-between items-center"}>
+            <span>Basic Details</span>
+            <button className={"action-button secondary"} onClick={handleClear}>
+              Clear
+            </button>
+          </div>
           <DesktopDatePicker
             label="Created At"
             inputFormat="yyyy-MM-dd"
