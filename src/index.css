@@ -1,5 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *, *::after, *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+.header .MuiPaper-root {
+    @apply bg-gray-300 shadow-none text-black
+}
+
+
+/*KPIS STYLING*/
+
+
+.kpi {
+    @apply bg-gray-300 p-3;
+}
+
+.kpi h1 {
+    @apply font-medium;
+}
+
+.kpi div {
+    @apply font-bold text-2xl text-green-600;
+}
+
+/*TRANSACTION LIST STYLING*/
+.transaction-list {
+    @apply pt-3
+}
+
+/*HOMESTYLING*/
+.home-kpis {
+    @apply grid grid-cols-3  gap-20;
+}
+.home-transactions {
+    @apply mt-7
+}
+
+.home-transactions_heading {
+    @apply border-b flex justify-between
+}
+
+.transaction-list .MuiPaper-root {
+    border-radius: 0 !important;
+    @apply mt-2 shadow-none bg-gray-300 border-none;
+}
+
+.transaction-accordion-details {
+}
+
+.action-button {
+    @apply p-1;
+}
+
+.action-button.regular{
+    @apply bg-white;
+}
+
+.action-button.primary{
+    @apply bg-blue-500;
+}
+
+.action-button.secondary{
+    @apply bg-gray-300;
+}
+
+.transaction-accordion-action {
+    @apply flex justify-between mt-2 content-center
+}
+
+.action-button.delete{
+    @apply bg-red-500;
+}
+
+.action-button.delete svg{
+    @apply text-2xl;
+}
+
+
+
+
+
+
+.invoice-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    color: #555;
+}
+
+.invoice-box table {
+    width: 100%;
+    line-height: inherit;
+    text-align: left;
+}
+
+.invoice-box table td {
+    padding: 5px;
+    vertical-align: top;
+}
+
+.invoice-box table tr td:nth-child(2) {
+    text-align: right;
+}
+
+.invoice-box table tr.top table td {
+    padding-bottom: 20px;
+}
+
+.invoice-box table tr.top table td.title {
+    font-size: 45px;
+    line-height: 45px;
+    color: #333;
+}
+
+.invoice-box table tr.information table td {
+    padding-bottom: 40px;
+}
+
+.invoice-box table tr.heading td {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+}
+
+.invoice-box table tr.details td {
+    padding-bottom: 20px;
+}
+
+.invoice-box table tr.item td {
+    border-bottom: 1px solid #eee;
+}
+
+.invoice-box table tr.item.last td {
+    border-bottom: none;
+}
+
+.invoice-box table tr.total td:nth-child(2) {
+    border-top: 2px solid #eee;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+    .invoice-box table tr.top table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .invoice-box table tr.information table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}
+
+/** RTL **/
+.invoice-box.rtl {
+    direction: rtl;
+    font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+}
+
+.invoice-box.rtl table {
+    text-align: right;
+}
+
+.invoice-box.rtl table tr td:nth-child(2) {
+    text-align: left;
+}
+
+
