@@ -1,5 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *, *::after, *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+.header .MuiPaper-root {
+    @apply bg-gray-300 shadow-none text-black
+}
+
+
+/*KPIS STYLING*/
+
+
+.kpi {
+    @apply bg-gray-300 p-3;
+}
+
+.kpi h1 {
+    @apply font-medium;
+}
+
+.kpi div {
+    @apply font-bold text-2xl text-green-600;
+}
+
+/*TRANSACTION LIST STYLING*/
+.transaction-list {
+    @apply pt-3
+}
+
+/*HOMESTYLING*/
+.home-kpis {
+    @apply grid grid-cols-3  gap-20;
+}
+.home-transactions {
+    @apply mt-7
+}
+
+.home-transactions_heading {
+    @apply border-b flex justify-between
+}
+
+.transaction-list .MuiPaper-root {
+    border-radius: 0 !important;
+    @apply mt-2 shadow-none bg-gray-300 border-none;
+}
+
+.transaction-accordion-details {
+}
+
+.action-button {
+    @apply p-1;
+}
+
+.action-button.regular{
+    @apply bg-white;
+}
+
+.action-button.primary{
+    @apply bg-blue-500;
+}
+
+.action-button.secondary{
+    @apply bg-gray-300;
+}
+
+.transaction-accordion-action {
+    @apply flex justify-between mt-2 content-center
+}
+
+.action-button.delete{
+    @apply bg-red-500;
+}
+
+.action-button.delete svg{
+    @apply text-2xl;
+}
+
+

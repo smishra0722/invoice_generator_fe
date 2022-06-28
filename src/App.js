@@ -1,28 +1,31 @@
-import React from 'react';
-import './App.css';
-import Home from './pages/home/home'
-import Form from './pages/form/form'
-import {Routes, Route, Link} from 'react-router-dom'
-import {useDispatch, useSelector} from "react-redux";
-import {incremented, decremented} from "./redux/testRecducer";
+import React from "react";
+import PageRoutes from "./routes";
+import { Routes, Route } from "react-router";
+import Box from "@mui/material/Box";
+import AppBar from "@mui/material/AppBar";
+import CssBaseline from "@mui/material/CssBaseline";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Sidebar from './components/sidebar'
+import Header from './components/header'
+
 
 function App() {
-  // redux statements
-  const dispatch = useDispatch()
-  const {value} = useSelector(state => state.counter)
-
-  const [isFormPage, setIsFormPage] = React.useState(false)
-
   return (
     <div className="App">
-        <Link to={isFormPage ? '/form' : '/'} onClick={() => setIsFormPage((prev) => !prev)}>Go to {isFormPage ? 'Form' : 'Home'} Page</Link>
-      <button onClick={() => dispatch(incremented())}>Increment</button>
-      <button onClick={() => dispatch(decremented())}>Decrement</button>
-      <div>Value: {value}</div>
-    <Routes>
-    <Route exact path="/" element={<Home />} />
-    <Route exact path="/form" element={<Form />} />
-  </Routes>
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <Header />
+        <Sidebar />
+        <Box component="main" sx={{ flexGrow: 1, p: 2 }}>
+          <Toolbar />
+          <Routes>
+            {PageRoutes.map((route) => (
+              <Route {...route} />
+            ))}
+          </Routes>
+        </Box>
+      </Box>
     </div>
   );
 }
