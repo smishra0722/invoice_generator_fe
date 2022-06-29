@@ -15,7 +15,7 @@ const Home = () => {
           </Link>
         </div>
         <div>
-          <TransactionList />
+          <TransactionList limit={10} />
         </div>
       </div>
     </div>

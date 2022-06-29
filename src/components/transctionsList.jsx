@@ -13,7 +13,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { current } from "@reduxjs/toolkit";
 
-const TransactionsList = () => {
+const TransactionsList = (props) => {
   const history = useNavigate();
   const dispatch = useDispatch();
   const transactionData = useSelector(
@@ -61,9 +61,12 @@ const TransactionsList = () => {
   // });
 
   // console.log("SORTEDTRANSACTIONS", temp);
+  const newTransactionData = props.limit
+    ? transactionData.slice(0, props.limit)
+    : transactionData;
   return (
     <div className={"transaction-list"}>
-      {transactionData.map((data) => {
+      {newTransactionData.map((data) => {
         return (
           <Accordion>
             <AccordionSummary
