@@ -60,6 +60,12 @@ const Form = () => {
         buyer: { ...prev.buyer, [e.target.name]: e.target.value },
       }));
     }
+    if (e.target.name.includes("note")) {
+      return setFormData((prev) => ({
+        ...prev,
+        delivery: { ...prev.delivery, [e.target.name]: e.target.value },
+      }));
+    }
 
     return setFormData((prev) => ({
       ...prev,
@@ -252,6 +258,16 @@ const Form = () => {
             type={"email"}
             name={"buyerEmail"}
             value={formData.buyer.buyerEmail}
+            onChange={handleChange}
+            required
+          />
+          <TextField
+            label="Delivery Note"
+            variant="filled"
+            size={"medium"}
+            type={"email"}
+            name={"note"}
+            value={formData.delivery.note}
             onChange={handleChange}
             required
           />
