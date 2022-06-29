@@ -11,6 +11,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import { Link } from "react-router-dom";
+import { GrTransaction } from "react-icons/gr";
 
 const Sidebar = () => {
   const drawerWidth = 240;
@@ -37,7 +38,7 @@ const Sidebar = () => {
               <ListItem key={index} disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                    {index % 2 === 0 ? <InboxIcon /> : <GrTransaction />}
                   </ListItemIcon>
 
                   <ListItemText primary={text.title} />
