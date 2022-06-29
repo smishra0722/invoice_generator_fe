@@ -1,12 +1,14 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import moment from "moment";
 import { FormattedNumber } from "react-intl";
+import { useReactToPrint } from "react-to-print";
 
-const ShowDetails = () => {
+const GenerateInvoice = () => {
   const params = useParams();
-  console.log("PARAMS", params);
+  const componentRef = React.useRef();
+
   const data = useSelector(
     (state) => state.transactionsReducer.singleTransaction
   );
@@ -14,15 +16,15 @@ const ShowDetails = () => {
     (acc, product) => acc + Number(product.amount) * Number(product.quantity),
     0
   );
-  console.log("DATA", data);
-  return (
-    <div class="invoice-box">
-      <table cellpadding="0" cellspacing="0">
-        <tr class="top">
-          <td colspan="2">
+
+  const InvoiceHTML = (
+    <div className="invoice-box" ref={componentRef}>
+      <table cellPadding="0" cellSpacing="0">
+        <tr className="top">
+          <td colSpan="2">
             <table>
               <tr>
-                <td class="title">
+                <td className="title">
                   <img
                     src="https://www.sparksuite.com/images/logo.png"
                     style={{ width: "100%", maxWidth: "300px" }}
@@ -41,8 +43,8 @@ const ShowDetails = () => {
           </td>
         </tr>
 
-        <tr class="information">
-          <td colspan="2">
+        <tr className="information">
+          <td colSpan="2">
             <table>
               <tr>
                 <td>
@@ -80,7 +82,7 @@ const ShowDetails = () => {
         {/*  <td>1000</td>*/}
         {/*</tr>*/}
 
-        <tr class="heading">
+        <tr className="heading">
           <td>Item</td>
 
           <td>Price xQuantity</td>
@@ -104,7 +106,7 @@ const ShowDetails = () => {
           );
         })}
 
-        <tr class="total">
+        <tr className="total">
           <td></td>
 
           <td>
@@ -121,6 +123,25 @@ const ShowDetails = () => {
       </table>
     </div>
   );
+
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
+  return (
+    <>
+      <div className={"home-transactions_heading mb-7"}>
+        <h2 className={"text-2xl font-bold"}>All Transactions</h2>
+        <button
+          className={"action-button secondary mb-1"}
+          onClick={handlePrint}
+        >
+          Download
+        </button>
+      </div>
+      {InvoiceHTML}
+    </>
+  );
 };
 
-export default ShowDetails;
+export default GenerateInvoice;

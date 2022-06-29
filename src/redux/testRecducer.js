@@ -5,7 +5,7 @@ const transactions = createSlice({
   initialState: {
     transactions: [
       {
-        id: 12344,
+        id: 1,
         createdAt: "2022-03-21",
         seller: {
           sellerName: "Neelansh Equipments and machines",
@@ -20,21 +20,35 @@ const transactions = createSlice({
           buyerEmail: "buyer@gmail.com",
         },
         products: [
-          { name: "Product1", quantity: 3, amount: 300 },
-          { name: "Product2", quantity: 4, amount: 300 },
-          { name: "Product3", quantity: 6, amount: 300 },
-          { name: "Product4", quantity: 8, amount: 300 },
-          { name: "Product5", quantity: 9, amount: 300 },
-          { name: "Product6", quantity: 2, amount: 300 },
-          { name: "Product7", quantity: 1, amount: 300 },
-          { name: "Product8", quantity: 2, amount: 300 },
+          { id: 1, name: "Product1", quantity: 3, amount: 300 },
+          { id: 2, name: "Product1", quantity: 3, amount: 300 },
         ],
         delivery: {
           note: "Do this this way",
         },
       },
       {
-        id: 12345,
+        id: 2,
+        createdAt: "2022-03-21",
+        seller: {
+          sellerName: "Neelansh Equipments and machines",
+          sellerAddress1: "12345 Sunny Road",
+          sellerAddress2: "Sunnyville, CA 12345",
+          sellerEmail: "seller@email.com",
+        },
+        buyer: {
+          buyerName: "Neelansh Equipments and machines",
+          buyerAddress1: "12345 Sunny Road",
+          buyerAddress2: "Sunnyville, CA 12345",
+          buyerEmail: "buyer@gmail.com",
+        },
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
+        delivery: {
+          note: "Do this this way",
+        },
+      },
+      {
+        id: 3,
         createdAt: "2022-03-21",
         seller: {
           sellerName: "Neelansh Equipments and machines",
@@ -49,21 +63,15 @@ const transactions = createSlice({
           buyerEmail: "buyer@gmail.com",
         },
         products: [
-          { name: "Product1", quantity: 3, amount: 300 },
-          { name: "Product2", quantity: 4, amount: 300 },
-          { name: "Product3", quantity: 6, amount: 300 },
-          { name: "Product4", quantity: 8, amount: 300 },
-          { name: "Product5", quantity: 9, amount: 300 },
-          { name: "Product6", quantity: 2, amount: 300 },
-          { name: "Product7", quantity: 1, amount: 300 },
-          { name: "Product8", quantity: 2, amount: 300 },
+          { id: 1, name: "Product1", quantity: 3, amount: 300 },
+          { id: 2, name: "Product1", quantity: 3, amount: 300 },
         ],
         delivery: {
           note: "Do this this way",
         },
       },
       {
-        id: 12346,
+        id: 4,
         createdAt: "2022-03-21",
         seller: {
           sellerName: "Neelansh Equipments and machines",
@@ -77,22 +85,13 @@ const transactions = createSlice({
           buyerAddress2: "Sunnyville, CA 12345",
           buyerEmail: "buyer@gmail.com",
         },
-        products: [
-          { name: "Product1", quantity: 3, amount: 300 },
-          { name: "Product2", quantity: 4, amount: 300 },
-          { name: "Product3", quantity: 6, amount: 300 },
-          { name: "Product4", quantity: 8, amount: 300 },
-          { name: "Product5", quantity: 9, amount: 300 },
-          { name: "Product6", quantity: 2, amount: 300 },
-          { name: "Product7", quantity: 1, amount: 300 },
-          { name: "Product8", quantity: 2, amount: 300 },
-        ],
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
         delivery: {
           note: "Do this this way",
         },
       },
       {
-        id: 12344,
+        id: 5,
         createdAt: "2022-03-21",
         seller: {
           sellerName: "Neelansh Equipments and machines",
@@ -106,22 +105,13 @@ const transactions = createSlice({
           buyerAddress2: "Sunnyville, CA 12345",
           buyerEmail: "buyer@gmail.com",
         },
-        products: [
-          { name: "Product1", quantity: 3, amount: 300 },
-          { name: "Product2", quantity: 4, amount: 300 },
-          { name: "Product3", quantity: 6, amount: 300 },
-          { name: "Product4", quantity: 8, amount: 300 },
-          { name: "Product5", quantity: 9, amount: 300 },
-          { name: "Product6", quantity: 2, amount: 300 },
-          { name: "Product7", quantity: 1, amount: 300 },
-          { name: "Product8", quantity: 2, amount: 300 },
-        ],
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
         delivery: {
           note: "Do this this way",
         },
       },
       {
-        id: 12344,
+        id: 6,
         createdAt: "2022-03-21",
         seller: {
           sellerName: "Neelansh Equipments and machines",
@@ -135,22 +125,13 @@ const transactions = createSlice({
           buyerAddress2: "Sunnyville, CA 12345",
           buyerEmail: "buyer@gmail.com",
         },
-        products: [
-          { name: "Product1", quantity: 3, amount: 300 },
-          { name: "Product2", quantity: 4, amount: 300 },
-          { name: "Product3", quantity: 6, amount: 300 },
-          { name: "Product4", quantity: 8, amount: 300 },
-          { name: "Product5", quantity: 9, amount: 300 },
-          { name: "Product6", quantity: 2, amount: 300 },
-          { name: "Product7", quantity: 1, amount: 300 },
-          { name: "Product8", quantity: 2, amount: 300 },
-        ],
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
         delivery: {
           note: "Do this this way",
         },
       },
       {
-        id: 12344,
+        id: 7,
         createdAt: "2022-03-21",
         seller: {
           sellerName: "Neelansh Equipments and machines",
@@ -164,22 +145,13 @@ const transactions = createSlice({
           buyerAddress2: "Sunnyville, CA 12345",
           buyerEmail: "buyer@gmail.com",
         },
-        products: [
-          { name: "Product1", quantity: 3, amount: 300 },
-          { name: "Product2", quantity: 4, amount: 300 },
-          { name: "Product3", quantity: 6, amount: 300 },
-          { name: "Product4", quantity: 8, amount: 300 },
-          { name: "Product5", quantity: 9, amount: 300 },
-          { name: "Product6", quantity: 2, amount: 300 },
-          { name: "Product7", quantity: 1, amount: 300 },
-          { name: "Product8", quantity: 2, amount: 300 },
-        ],
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
         delivery: {
           note: "Do this this way",
         },
       },
       {
-        id: 12344,
+        id: 8,
         createdAt: "2022-03-21",
         seller: {
           sellerName: "Neelansh Equipments and machines",
@@ -193,22 +165,13 @@ const transactions = createSlice({
           buyerAddress2: "Sunnyville, CA 12345",
           buyerEmail: "buyer@gmail.com",
         },
-        products: [
-          { name: "Product1", quantity: 3, amount: 300 },
-          { name: "Product2", quantity: 4, amount: 300 },
-          { name: "Product3", quantity: 6, amount: 300 },
-          { name: "Product4", quantity: 8, amount: 300 },
-          { name: "Product5", quantity: 9, amount: 300 },
-          { name: "Product6", quantity: 2, amount: 300 },
-          { name: "Product7", quantity: 1, amount: 300 },
-          { name: "Product8", quantity: 2, amount: 300 },
-        ],
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
         delivery: {
           note: "Do this this way",
         },
       },
       {
-        id: 12344,
+        id: 9,
         createdAt: "2022-03-21",
         seller: {
           sellerName: "Neelansh Equipments and machines",
@@ -222,22 +185,13 @@ const transactions = createSlice({
           buyerAddress2: "Sunnyville, CA 12345",
           buyerEmail: "buyer@gmail.com",
         },
-        products: [
-          { name: "Product1", quantity: 3, amount: 300 },
-          { name: "Product2", quantity: 4, amount: 300 },
-          { name: "Product3", quantity: 6, amount: 300 },
-          { name: "Product4", quantity: 8, amount: 300 },
-          { name: "Product5", quantity: 9, amount: 300 },
-          { name: "Product6", quantity: 2, amount: 300 },
-          { name: "Product7", quantity: 1, amount: 300 },
-          { name: "Product8", quantity: 2, amount: 300 },
-        ],
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
         delivery: {
           note: "Do this this way",
         },
       },
       {
-        id: 12344,
+        id: 10,
         createdAt: "2022-03-21",
         seller: {
           sellerName: "Neelansh Equipments and machines",
@@ -251,22 +205,13 @@ const transactions = createSlice({
           buyerAddress2: "Sunnyville, CA 12345",
           buyerEmail: "buyer@gmail.com",
         },
-        products: [
-          { name: "Product1", quantity: 3, amount: 300 },
-          { name: "Product2", quantity: 4, amount: 300 },
-          { name: "Product3", quantity: 6, amount: 300 },
-          { name: "Product4", quantity: 8, amount: 300 },
-          { name: "Product5", quantity: 9, amount: 300 },
-          { name: "Product6", quantity: 2, amount: 300 },
-          { name: "Product7", quantity: 1, amount: 300 },
-          { name: "Product8", quantity: 2, amount: 300 },
-        ],
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
         delivery: {
           note: "Do this this way",
         },
       },
       {
-        id: 12344,
+        id: 11,
         createdAt: "2022-03-21",
         seller: {
           sellerName: "Neelansh Equipments and machines",
@@ -280,22 +225,13 @@ const transactions = createSlice({
           buyerAddress2: "Sunnyville, CA 12345",
           buyerEmail: "buyer@gmail.com",
         },
-        products: [
-          { name: "Product1", quantity: 3, amount: 300 },
-          { name: "Product2", quantity: 4, amount: 300 },
-          { name: "Product3", quantity: 6, amount: 300 },
-          { name: "Product4", quantity: 8, amount: 300 },
-          { name: "Product5", quantity: 9, amount: 300 },
-          { name: "Product6", quantity: 2, amount: 300 },
-          { name: "Product7", quantity: 1, amount: 300 },
-          { name: "Product8", quantity: 2, amount: 300 },
-        ],
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
         delivery: {
           note: "Do this this way",
         },
       },
       {
-        id: 12344,
+        id: 12,
         createdAt: "2022-03-21",
         seller: {
           sellerName: "Neelansh Equipments and machines",
@@ -309,22 +245,13 @@ const transactions = createSlice({
           buyerAddress2: "Sunnyville, CA 12345",
           buyerEmail: "buyer@gmail.com",
         },
-        products: [
-          { name: "Product1", quantity: 3, amount: 300 },
-          { name: "Product2", quantity: 4, amount: 300 },
-          { name: "Product3", quantity: 6, amount: 300 },
-          { name: "Product4", quantity: 8, amount: 300 },
-          { name: "Product5", quantity: 9, amount: 300 },
-          { name: "Product6", quantity: 2, amount: 300 },
-          { name: "Product7", quantity: 1, amount: 300 },
-          { name: "Product8", quantity: 2, amount: 300 },
-        ],
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
         delivery: {
           note: "Do this this way",
         },
       },
       {
-        id: 12344,
+        id: 13,
         createdAt: "2022-03-21",
         seller: {
           sellerName: "Neelansh Equipments and machines",
@@ -338,22 +265,13 @@ const transactions = createSlice({
           buyerAddress2: "Sunnyville, CA 12345",
           buyerEmail: "buyer@gmail.com",
         },
-        products: [
-          { name: "Product1", quantity: 3, amount: 300 },
-          { name: "Product2", quantity: 4, amount: 300 },
-          { name: "Product3", quantity: 6, amount: 300 },
-          { name: "Product4", quantity: 8, amount: 300 },
-          { name: "Product5", quantity: 9, amount: 300 },
-          { name: "Product6", quantity: 2, amount: 300 },
-          { name: "Product7", quantity: 1, amount: 300 },
-          { name: "Product8", quantity: 2, amount: 300 },
-        ],
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
         delivery: {
           note: "Do this this way",
         },
       },
       {
-        id: 12344,
+        id: 14,
         createdAt: "2022-03-21",
         seller: {
           sellerName: "Neelansh Equipments and machines",
@@ -367,22 +285,13 @@ const transactions = createSlice({
           buyerAddress2: "Sunnyville, CA 12345",
           buyerEmail: "buyer@gmail.com",
         },
-        products: [
-          { name: "Product1", quantity: 3, amount: 300 },
-          { name: "Product2", quantity: 4, amount: 300 },
-          { name: "Product3", quantity: 6, amount: 300 },
-          { name: "Product4", quantity: 8, amount: 300 },
-          { name: "Product5", quantity: 9, amount: 300 },
-          { name: "Product6", quantity: 2, amount: 300 },
-          { name: "Product7", quantity: 1, amount: 300 },
-          { name: "Product8", quantity: 2, amount: 300 },
-        ],
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
         delivery: {
           note: "Do this this way",
         },
       },
       {
-        id: 12344,
+        id: 15,
         createdAt: "2022-03-21",
         seller: {
           sellerName: "Neelansh Equipments and machines",
@@ -396,16 +305,47 @@ const transactions = createSlice({
           buyerAddress2: "Sunnyville, CA 12345",
           buyerEmail: "buyer@gmail.com",
         },
-        products: [
-          { name: "Product1", quantity: 3, amount: 300 },
-          { name: "Product2", quantity: 4, amount: 300 },
-          { name: "Product3", quantity: 6, amount: 300 },
-          { name: "Product4", quantity: 8, amount: 300 },
-          { name: "Product5", quantity: 9, amount: 300 },
-          { name: "Product6", quantity: 2, amount: 300 },
-          { name: "Product7", quantity: 1, amount: 300 },
-          { name: "Product8", quantity: 2, amount: 300 },
-        ],
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
+        delivery: {
+          note: "Do this this way",
+        },
+      },
+      {
+        id: 16,
+        createdAt: "2022-03-21",
+        seller: {
+          sellerName: "Neelansh Equipments and machines",
+          sellerAddress1: "12345 Sunny Road",
+          sellerAddress2: "Sunnyville, CA 12345",
+          sellerEmail: "seller@email.com",
+        },
+        buyer: {
+          buyerName: "Neelansh Equipments and machines",
+          buyerAddress1: "12345 Sunny Road",
+          buyerAddress2: "Sunnyville, CA 12345",
+          buyerEmail: "buyer@gmail.com",
+        },
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
+        delivery: {
+          note: "Do this this way",
+        },
+      },
+      {
+        id: 17,
+        createdAt: "2022-03-21",
+        seller: {
+          sellerName: "Neelansh Equipments and machines",
+          sellerAddress1: "12345 Sunny Road",
+          sellerAddress2: "Sunnyville, CA 12345",
+          sellerEmail: "seller@email.com",
+        },
+        buyer: {
+          buyerName: "Neelansh Equipments and machines",
+          buyerAddress1: "12345 Sunny Road",
+          buyerAddress2: "Sunnyville, CA 12345",
+          buyerEmail: "buyer@gmail.com",
+        },
+        products: [{ id: 1, name: "Product1", quantity: 3, amount: 300 }],
         delivery: {
           note: "Do this this way",
         },
@@ -418,14 +358,20 @@ const transactions = createSlice({
       state.transactions = state.transactions;
     },
     addTransaction: (state, action) => {
-      state.transactions = state.transactions.push(action.payload);
+      const newState = [...state.transactions, action.payload];
+      console.log("ADD TRANSCATIONS", action.payload, newState);
+      state.transactions = newState;
     },
     updateTransaction: (state, action) => {
       state.transactions = state.transactions.map((transaction) => {
-        return {
-          ...transaction,
-          ...action.payload,
-        };
+        if (transaction.id == action.payload.id) {
+          return {
+            ...transaction,
+            ...action.payload,
+          };
+        }
+        state.singleTransaction = {};
+        return transaction;
       });
     },
     deleteTransaction: (state, action) => {
@@ -439,6 +385,9 @@ const transactions = createSlice({
         return transaction.id === action.payload;
       });
     },
+    clearSingleTransaction: (state, action) => {
+      state.singleTransaction = {};
+    },
   },
 });
 
@@ -447,6 +396,8 @@ export const {
   deleteTransaction,
   getTransactionById,
   getAllTransactions,
+  addTransaction,
+  clearSingleTransaction,
 } = transactions.actions;
 
 export default transactions.reducer;

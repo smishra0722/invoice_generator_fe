@@ -1,7 +1,8 @@
 import React from "react";
 import KPIs from "../../components/kpis";
 import TransactionList from "../../components/transctionsList";
-import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
     <div className="home">
@@ -9,9 +10,9 @@ const Home = () => {
       <div className={"home-transactions"}>
         <div className={"home-transactions_heading"}>
           <h2 className={"text-2xl font-bold"}>Recent Transactions</h2>
-          <button className={"action-button secondary mb-1"}>
+          <Link to="/form/0" className={"action-button secondary mb-1"}>
             Create Transaction
-          </button>
+          </Link>
         </div>
         <div>
           <TransactionList />
