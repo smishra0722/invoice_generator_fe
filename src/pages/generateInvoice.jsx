@@ -131,7 +131,7 @@ const GenerateInvoice = () => {
   return (
     <>
       <div className={"home-transactions_heading mb-7"}>
-        <h2 className={"text-2xl font-bold"}>All Transactions</h2>
+        <h2 className={"text-2xl font-bold"}>Generated Invoice</h2>
         <button
           className={"action-button secondary mb-1"}
           onClick={handlePrint}
